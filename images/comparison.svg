@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+
+  <!-- 背景 -->
+  <rect width="880" height="480" fill="#ffffff"/>
+
+  <!-- 标题区 -->
+  <text x="440" y="48" text-anchor="middle" font-size="28" font-weight="700" fill="#111827">同一个 GD 联名棒球帽，怎么买差这么多？</text>
+  <text x="440" y="78" text-anchor="middle" font-size="17" fill="#6b7280">麦当劳 × PEACEMINUSONE 周边 · 官方规则「任意餐品消费加 39.9 元即可得」</text>
+
+  <!-- 左卡片：常见误区 -->
+  <rect x="40" y="110" width="360" height="230" rx="14" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+  <text x="220" y="148" text-anchor="middle" font-size="17" font-weight="600" fill="#dc2626">❌ 常见误区</text>
+  <text x="220" y="232" text-anchor="middle" font-size="64" font-weight="800" fill="#dc2626">¥74.4</text>
+  <line x1="80" y1="262" x2="360" y2="262" stroke="#fecaca" stroke-width="1"/>
+  <text x="220" y="290" text-anchor="middle" font-size="15" fill="#6b7280">精选单人餐三件套　¥34.5</text>
+  <text x="220" y="316" text-anchor="middle" font-size="15" fill="#6b7280">+ 联名棒球帽　¥39.9</text>
+
+  <!-- 右卡片：本工具推荐 -->
+  <rect x="480" y="110" width="360" height="230" rx="14" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+  <text x="660" y="148" text-anchor="middle" font-size="17" font-weight="600" fill="#16a34a">✅ 本工具推荐</text>
+  <text x="660" y="232" text-anchor="middle" font-size="64" font-weight="800" fill="#16a34a">¥39.9</text>
+  <line x1="520" y1="262" x2="800" y2="262" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="660" y="290" text-anchor="middle" font-size="15" fill="#6b7280">圆筒冰淇淋　¥5.0</text>
+  <text x="660" y="316" text-anchor="middle" font-size="15" fill="#6b7280">+ 棒球帽随单购价　¥34.9</text>
+
+  <!-- 中间：省 -->
+  <circle cx="440" cy="225" r="34" fill="#16a34a"/>
+  <text x="440" y="220" text-anchor="middle" font-size="13" fill="#ffffff" font-weight="600">省</text>
+  <text x="440" y="240" text-anchor="middle" font-size="16" fill="#ffffff" font-weight="700">¥34.5</text>
+
+  <!-- 底部：集齐全套 -->
+  <rect x="40" y="360" width="800" height="100" rx="12" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="440" y="392" text-anchor="middle" font-size="16" fill="#374151">集齐全套三期（棒球帽 + 联名徽章 + 限定丝巾）</text>
+  <text x="280" y="430" text-anchor="middle" font-size="20" fill="#9ca3af" text-decoration="line-through">不优化 ¥223.2</text>
+  <text x="440" y="430" text-anchor="middle" font-size="22" fill="#374151">→</text>
+  <text x="600" y="430" text-anchor="middle" font-size="20" font-weight="700" fill="#16a34a">优化后 ¥113.7</text>
+  <text x="440" y="455" text-anchor="middle" font-size="15" font-weight="600" fill="#16a34a">最多省 ¥109.5</text>
+
+</svg>
