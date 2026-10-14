@@ -19,6 +19,7 @@ from optimizer import (  # noqa: E402
     identify_merch,
     looks_like_food,
     looks_like_merch,
+    membership_fee_for,
     pick_anchor_meals,
     render_report,
     run_offline_demo,
@@ -73,20 +74,25 @@ def main() -> int:
           safe[0].current_price > aggressive[0].current_price)
     check("锚点不含周边本身", all(m.code != "521954" for m in aggressive + safe))
 
-    print("== 4. 净到手成本计算 ==")
+    print("== 4. 净到手成本计算（含会员卡成本建模） ==")
     merch_item = next(m for m in merch if m.code == "521954")
+    fee = membership_fee_for(merch_item)  # 随单购需先办麦金卡体验卡 ¥9.9
     plans = build_plans(
         merch=merch_item,
         anchor_meals=safe,
         coupons=[],
         food_need_value=30.0,
+        membership_fee=fee,
     )
     check("生成了多个方案", len(plans) >= 3, f"实际={len(plans)}")
     check("方案按净成本升序", all(
         plans[i].net_cost <= plans[i + 1].net_cost for i in range(len(plans) - 1)
     ))
+    # 直购单买是净成本最低方案（绝对现金底线）
+    check("直购单买为净成本最低方案",
+          plans[0].label == "直购（单买）", f"实际榜首={plans[0].label}")
 
-    # 手工核算：苹果片 7.0 + 随单购价 34.9 = 41.9，减刚需 30 = 11.9
+    # 手工核算：苹果片 7.0 + 随单购价 34.9 + 会员卡 9.9 = 51.8，减刚需 30 = 21.8
     manual = None
     for p in plans:
         if p.anchor and p.anchor.code == "6102" and "随单购" in p.label:
@@ -94,7 +100,10 @@ def main() -> int:
             break
     check("苹果片 + 随单购 方案存在", manual is not None)
     if manual:
-        check("手工核算净成本 = 11.9", abs(manual.net_cost - 11.9) < 0.01,
+        check("随单购方案含会员卡，现金 ≥ 直购价",
+              manual.cash >= (merch_item.original_price or merch_item.current_price) - 0.01,
+              f"随单购现金={manual.cash}")
+        check("手工核算净成本 = 21.8", abs(manual.net_cost - 21.8) < 0.01,
               f"实际={manual.net_cost}")
 
     # 最便宜餐品（保守模式应为苹果片 7.0）+ 直接购买价 39.9 = 46.9
@@ -107,6 +116,11 @@ def main() -> int:
     if direct:
         check("手工核算净成本 = 16.9", abs(direct.net_cost - 16.9) < 0.01,
               f"实际={direct.net_cost}")
+
+    # 随单购方案必须标注会员卡成本
+    wo_with_card = [p for p in plans if "随单购" in p.label and "需办卡" in p.label]
+    check("随单购方案标注了会员卡成本",
+          any("麦金卡" in p.note for p in wo_with_card), "未标注")
 
     print("== 5. 优惠券门槛与排序 ==")
     coupons = [
