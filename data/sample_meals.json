@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "说明": "脱敏样例菜单，裁剪自麦当劳 MCP query-meals 真实返回",
+    "采集时间": "2026-10-13",
+    "来源门店": "已脱敏（原 storeCode 1450713，上海）",
+    "注意": "价格单位与真实接口一致，均为元；真实数据请以 MCP 实时返回为准",
+    "用途": "让没有 MCP Token 的评审者也能完整跑通优化流程"
+  },
+  "store": {
+    "storeCode": "1450713",
+    "storeName": "麦当劳示例餐厅（已脱敏）"
+  },
+  "meals": {
+    "521954": {
+      "name": "麦当劳联名复古棒球帽",
+      "currentPrice": "34.9",
+      "originalPrice": "39.9",
+      "canWithOrder": true,
+      "withOrder": { "membershipCode": "106", "specId": "880" },
+      "discountType": "随单购麦金卡优惠"
+    },
+    "521966": { "name": "韩式烟熏芝士风味酱", "currentPrice": "3.0", "originalPrice": "3.0" },
+    "521797": { "name": "北美招牌牧场酱", "currentPrice": "3.0", "originalPrice": "3.0" },
+    "515837": { "name": "圆筒冰淇淋", "currentPrice": "5.0", "originalPrice": "5.0" },
+    "521951": { "name": "灰焰圆筒", "currentPrice": "5.0", "originalPrice": "5.0" },
+    "6102":   { "name": "苹果片", "currentPrice": "7.0", "originalPrice": "7.0" },
+    "3757":   { "name": "纯悦", "currentPrice": "7.5", "originalPrice": "7.5" },
+    "9900015568": { "name": "精选超值随心配", "currentPrice": "13.9", "originalPrice": "13.9" },
+    "9900013304": { "name": "人气经典随心配", "currentPrice": "14.9", "originalPrice": "14.9" },
+    "521901": { "name": "月下相思扭扭薯", "currentPrice": "15.0", "originalPrice": "15.0" },
+    "1700":   { "name": "麦辣鸡翅", "currentPrice": "15.0", "originalPrice": "15.0" },
+    "4810":   { "name": "薯条", "currentPrice": "13.5", "originalPrice": "13.5" },
+    "9900008751": { "name": "可乐", "currentPrice": "9.5", "originalPrice": "9.5" },
+    "1440":   { "name": "麦辣鸡腿汉堡", "currentPrice": "22.5", "originalPrice": "22.5" },
+    "1406":   { "name": "板烧鸡腿堡", "currentPrice": "23.5", "originalPrice": "23.5" },
+    "1100":   { "name": "巨无霸", "currentPrice": "25.5", "originalPrice": "25.5" },
+    "9900016073": {
+      "name": "龙焰鸡腿堡三件套",
+      "currentPrice": "26.9",
+      "originalPrice": "47.5"
+    },
+    "9900016056": { "name": "麦乐鸡开心乐园餐", "currentPrice": "25.0", "originalPrice": "25.0" },
+    "9900016057": { "name": "汉堡开心乐园餐", "currentPrice": "23.5", "originalPrice": "23.5" },
+    "9900016058": { "name": "鱼排堡开心乐园餐", "currentPrice": "24.0", "originalPrice": "24.0" },
+    "9900004064": {
+      "name": "精选单人餐三件套",
+      "currentPrice": "34.5",
+      "originalPrice": "46.0"
+    },
+    "9900015856": {
+      "name": "泷运当头四件套",
+      "currentPrice": "91.7",
+      "originalPrice": "91.7"
+    }
+  },
+  "coupons": [
+    {
+      "couponId": "EXAMPLE-0001",
+      "name": "9.9元薯你最甜（示例）",
+      "face_value": 9.9,
+      "min_spend": 0,
+      "scope": "外送专用"
+    },
+    {
+      "couponId": "EXAMPLE-0002",
+      "name": "满35减7（示例）",
+      "face_value": 7.0,
+      "min_spend": 35.0,
+      "scope": "通用"
+    }
+  ]
+}
